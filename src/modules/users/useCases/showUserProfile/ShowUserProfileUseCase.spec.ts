@@ -1,10 +1,5 @@
-import jwt from "jsonwebtoken";
-
-import authConfig from "../../../../config/auth";
 import { AppError } from "../../../../shared/errors/AppError";
-import { User } from "../../entities/User";
 import { InMemoryUsersRepository } from "../../repositories/in-memory/InMemoryUsersRepository";
-import { AuthenticateUserUseCase } from "../authenticateUser/AuthenticateUserUseCase";
 import { CreateUserUseCase } from "../createUser/CreateUserUseCase";
 import { ICreateUserDTO } from "../createUser/ICreateUserDTO";
 import { ShowUserProfileUseCase } from "./ShowUserProfileUseCase";
@@ -14,11 +9,6 @@ let createUserUseCase: CreateUserUseCase;
 let showUserProfileUseCase: ShowUserProfileUseCase;
 
 describe("Show users profile", () => {
-  // interface IUserToken {
-  //   user: User;
-  //   token: string;
-  // }
-
   beforeEach(() => {
     inMemoryUsersRepository = new InMemoryUsersRepository();
     createUserUseCase = new CreateUserUseCase(inMemoryUsersRepository);
