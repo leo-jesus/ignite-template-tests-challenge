@@ -41,7 +41,7 @@ describe("Show user profile controller", () => {
     expect(response.body.email).toEqual(user.email);
     expect(response.body.password).not.toEqual(user.password);
   });
-  it("shouldn't be able to get an user profile without a valid id", async () => {
+  it("shouldn't be able to get an user profile without a valid token", async () => {
     const response = await request(app).get("/api/v1/profile").set({
       Authorization: `Bearer invalid-token`,
     });
