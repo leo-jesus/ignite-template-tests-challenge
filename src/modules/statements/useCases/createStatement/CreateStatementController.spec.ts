@@ -47,7 +47,7 @@ describe("Create statement controller", () => {
     expect(response.status).toBe(201);
   });
 
-  it("Shouldn't be able to create a  statement to invalid token", async () => {
+  it("Shouldn't be able to create a  statement to a non existent user", async () => {
     const response = await request(app)
       .post("/api/v1/statements/deposit")
       .send({
