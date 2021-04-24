@@ -4,10 +4,10 @@ enum OperationType {
   TRANSFER = "transfer",
   TRANSFER_RECEIVED = "transfer_received",
 }
-export type ICreateStatementDTO = {
-  user_id: string;
+export type ICreateTransferDTO = {
+  id: string;
   description: string;
   amount: number;
-  type: OperationType;
+  sender_id: string;
   transfer_id?: string;
 };
